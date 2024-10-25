@@ -1,0 +1,1248 @@
+/* Reset and Box Sizing */
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Extra Offer Popup*/
+/* Popup container */
+.extraOfferPopup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 990; /* Sits on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Background overlay */
+}
+
+/* Popup content */
+.extraOfferPopup-content {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: linear-gradient(to right, #176ef9, #4e08f3); /* Match with Nostra navbar color */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    animation: popupSlideDown 0.5s ease;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Slide down animation for popup */
+@keyframes popupSlideDown {
+    from { top: -50px; opacity: 0; }
+    to { top: 10%; opacity: 1; }
+}
+
+/* Close button */
+.extraOfferPopup-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+/* Promo icon (gift icon) */
+.promo-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+/* Text styles */
+.extraOfferPopup h2 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+.extraOfferPopup p {
+    font-size: 16px;
+}
+@media only screen and (max-width: 900px) {
+    .extraOfferPopup-content {
+        width: 85%;
+        max-width: 400px;
+        padding: 15px;
+    }
+    .extraOfferPopup h2 {
+        font-size: 22px;
+    }
+    .promo-icon {
+        font-size: 45px;
+    }
+    .extraOfferPopup p {
+        font-size: 14px;
+    }
+    .extraOfferPopup-close {
+        font-size: 28px;
+    }
+}
+
+/* For mobile phones (up to 600px) */
+@media only screen and (max-width: 600px) {
+    .extraOfferPopup-content {
+        width: 95%;
+        max-width: 350px;
+        padding: 10px;
+    }
+    .extraOfferPopup h2 {
+        font-size: 20px;
+    }
+    .promo-icon {
+        font-size: 40px;
+    }
+    .extraOfferPopup p {
+        font-size: 12px;
+    }
+    .extraOfferPopup-close {
+        font-size: 25px;
+    }
+}
+/* Navbar Styles */
+.Navbar {
+
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #2779fb, #5714f4);
+    /* Corrected closing parenthesis */
+    color: white;
+    /* Ensures text is readable against dark background */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Navbar__S01 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hamburger Menu Icon */
+.Navbar__S0 {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    /* Initially hidden, shown on mobile and tablet */
+    color: white;
+    /* Icon color */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Added transition for smooth effects */
+}
+
+.Navbar__S0:hover {
+    transform: scale(1.2);
+    /* Slight scaling on hover */
+    color: #f0f2f4;
+    /* Change color on hover */
+}
+
+/* Logo and Title */
+.Navbar__S1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Navbar__S1 img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s
+}
+
+.Navbar__S1 img:hover {
+    transform: scale(1.2)
+}
+
+.Navbar__S1 h1 {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    /* Ensures title is readable */
+    transition: color 0.3s ease;
+    /* Added transition for smooth color change */
+}
+
+.Navbar__S1 h1:hover {
+    color: #f0f2f4;
+    /* Color change on hover for interactivity */
+}
+
+/* Section 2 of Navbar */
+.Navbar__S02 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.Navbar__Menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bolder;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.Navbar__Menu p {
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: border-bottom 0.2s ease; /* Smooth transition for border */
+    position: relative; /* Positioning for pseudo-element */
+}
+
+.Navbar__Menu p:hover {
+    border-bottom: 2px solid white; /* Underline effect on hover */
+}
+
+/* Optional: Remove the underline when not hovered */
+.Navbar__Menu p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Aligns the underline */
+    height: 2px; /* Thickness of the underline */
+    background: transparent; /* No underline initially */
+    transition: background 0.2s ease; /* Smooth transition for underline */
+}
+
+.Navbar__Menu p:hover::after {
+    background: white; /* Show underline on hover */
+}
+.cart{
+    display: none !important;
+}
+/* Side Menu Styling */
+.side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    background-color: #5714f4;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #8f62f7;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    color: white;
+    padding: 10px 15px;
+}
+
+/* Show Side Menu */
+.side-menu.show {
+    left: 0;
+}
+
+/* Hide hamburger for larger screens */
+@media (min-width: 769px) {
+    #hamburger-menu {
+        display: none;
+    }
+}
+/* Navigation Links */
+.Navbar__S2 {
+    display: flex;
+    gap: 8px;
+}
+
+.Navbar__S2 p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    /* Ensures text is readable */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.Navbar__S2 p:hover {
+    color: #f0f2f4;
+    /* Subtle hover effect */
+}
+
+.contact-us {
+    transition: transform 0.3s;
+}
+
+.contact-us:hover {
+    transform: scale(1.1)
+}
+
+/* Hover Effects for Cart Icon */
+.Navbar__S2 p i {
+    margin-right: 5px;
+    /* Spacing between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+.Navbar__S2 p:hover i {
+    transform: scale(1.2);
+    /* Slight scaling on icon hover */
+    color: #f0f2f4;
+    /* Change icon color on hover */
+}
+
+/* Buttons */
+.Navbar__S3 button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+}
+
+.Navbar__S3__button3 {
+    background-color: #1abc9c;
+    /* Vibrant teal */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none;
+    /* Initially hidden, shown on mobile and tablet */
+}
+
+.Navbar__S3__button3:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.Navbar__S3__button2 {
+    background-color: #e74c3c;
+    /* Vibrant red */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Navbar__S3__button2:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Animation for the Navbar */
+.Navbar {
+    animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Slide in for Navbar links when the menu opens */
+#navbar-links.active {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding Bounce to Buttons */
+.Navbar__S3 button:hover {
+    animation: bounceHover 0.5s ease-in-out;
+}
+
+@keyframes bounceHover {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Icon Spin Animation */
+.Navbar__S0:hover {
+    animation: spin 0.6s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+/*Sign in popup*/
+/* General popup styles */
+.hidden {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+    
+}
+
+.popup-content {
+    position: relative;
+}
+
+.popup input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button.google-signin {
+    background-color: #db4437;
+    margin-top: 10px;
+}
+
+.popup .divider {
+    margin: 15px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.popup a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.popup a:hover {
+    text-decoration: underline;
+}
+
+.popup .close-btn {
+    position: absolute !important;
+    top: -15px !important;
+    right: 10px !important;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+}
+
+.password-error {
+    color: red;
+    display: none;
+    font-size: 12px;
+}
+/* Sale image Slider*/
+.sale-slider-container {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.sale-slider-scroll {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    scroll-snap-type: x mandatory; /* Snap to each image */ /* Hides the overflowing images */
+}
+
+.sale-slide {
+    min-width: 100%; /* Each image takes up the full width of the slider container */
+    flex-shrink: 0; /* Prevent shrinking */
+    scroll-snap-align: start; /* Align each slide at the start */
+    position: relative;
+}
+
+/* Remove scrollbar for the sale slider */
+.sale-slider-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.sale-slider-scroll {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Sale Image Animation */
+.animate-slideUp {
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Dark mode styles */
+body.dark-mode .popup {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode .popup input{
+    background-color: #444444;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark-mode .popup a {
+    color: #FFDD57;
+}
+body.dark-mode .popup button{
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    transition: 0.2s ease-in-out;
+}
+body.dark-mode .popup button:hover{
+    background-color: #444444;
+    border: 1px solid #444444;
+}
+body.dark-mode .close-btn{
+    color: white;
+}
+/* Background blur when popup is active */
+body.popup-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+/* Responsive Design */
+@media (max-width: 600px) {
+    .popup {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .popup input, .popup button {
+        font-size: 14px;
+    }
+}
+
+/*Menubar*/
+.menubar {
+    background-color: wheat;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */
+}
+
+.menubar .flex:hover {
+    color: #c4a57e;
+    /* A darker shade of wheat */
+}
+
+.menubar .flex:hover svg {
+    stroke: #c4a57e;
+    /* Match icon stroke color on hover */
+}
+
+.Sale-image {
+    width: 100%;
+    height: 20%;
+}
+
+.Sale-image img {
+    height: 50%;
+}
+
+/* Subtle Fade-in for Sale Image */
+.Sale-image img {
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fadeIn {
+    animation: fadeIn 1s forwards;
+}
+
+/* Additional Fade and Slide Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* On Scroll Animation */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.9);
+        /* Start slightly smaller */
+        opacity: 0;
+        /* Start invisible */
+    }
+
+    100% {
+        transform: scale(1);
+        /* End at original size */
+        opacity: 1;
+        /* Fully visible */
+    }
+}
+
+.animate-zoomIn {
+    animation: zoomIn 0.5s ease-in-out forwards;
+    /* Apply the zoom-in animation */
+}
+
+.grid>div {
+    animation-delay: 0.1s;
+    /* Delay for staggered animation */
+}
+
+.grid>div:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.grid>div:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.grid>div:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.grid>div:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slideUp {
+    animation: slideUp 1s forwards;
+}
+
+/* Trigger scroll animation for sections */
+@media (min-width: 769px) {
+    .scroll-reveal {
+        opacity: 0;
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Today's Deals Slider */
+.slider-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding: 10px;
+}
+
+#product-slider {
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    transition: transform 0.5s ease;
+}
+#product-slider1{
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    transition: transform 0.5s ease;
+}
+#product-slider2{
+    display: flex;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    transition: transform 0.5s ease;
+}
+.product-card {
+    scroll-snap-align: start;
+    flex: 0 0 calc(50% - 1rem); /* 2 products per row for small screens */
+    margin-right: 0.6rem;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+/* Styling for percentage discount */
+.discount-badge {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+}
+
+.product-card h2 {
+    color: #242424;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.product-card p {
+    margin: 5px 0;
+}
+
+.product-card .line-through {
+    text-decoration: line-through;
+}
+
+.product-card {
+    background-color: rgb(241, 236, 236);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Slightly increase size */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
+}
+/* Slider buttons */
+.slider-container button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: black;
+    padding: 12px;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.slider-container button:hover {
+    background-color: #f61f83;
+    color: white;
+}
+
+.slider-container #prevSlide {
+    left: 0;
+}
+
+.slider-container #nextSlide {
+    right: 0;
+}
+/* Responsive Design */
+@media (min-width: 600px) {
+    .product-card {
+        flex: 0 0 calc(33.333% - 1rem); /* 3 products per row for medium screens */
+    }
+    .product-card h2{
+        font-size: 1.1rem;
+    }
+}
+
+#faq{
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */
+}
+#footer{
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */
+}
+/* General Dark Mode Styles */
+body.dark-mode {
+    background-color: #3b3b3b;;
+    color: #e0e0e0;
+}
+
+/* Navbar in Dark Mode */
+body.dark-mode .Navbar {
+    background: linear-gradient(to right, #333333, #444444);
+}
+
+
+body.dark-mode .Navbar__S3 button {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .side-menu {
+    background-color: #333;
+}
+body.dark-mode .side-menu a:hover{
+    background-color: #575757;
+}
+/* Menu Bar in Dark Mode */
+body.dark-mode .menubar {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .menubar .flex:hover {
+    color: #c4a57e;
+}
+
+/* Dark Mode for Sale Image */
+body.dark-mode .sale-slide img {
+    filter: brightness(80%);
+}
+
+body.dark-mode .sale-slide a {
+    background-color: #2a2a2a;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .sale-slide a:hover {
+    background-color: #3b3b3b;
+    /* Slightly lighter for hover */
+}
+
+/* Dark Mode for Today's Deals */
+body.dark-mode .productcontainer  {
+    background-color: #3b3b3b;;
+}
+
+body.dark-mode .productcontainer h1 {
+    color: white;
+}
+
+body.dark-mode .product-card{
+    background-color: #232323;;
+}
+
+body.dark-mode .product-card h2{
+    color: white;
+}
+
+body.dark-mode .slider-container button{
+    color: white;
+    background-color: transparent;
+}
+
+body.dark-mode .slider-container button:hover{
+    background-color: #121212 !important;
+}
+/* Dark Mode for Popular Brands */
+body.dark-mode #popular-brands {
+    background-color: #3b3b3b;
+    /* Dark background for the section */
+}
+
+body.dark-mode #popular-brands .brand-card {
+    background-color: white;
+    /* Keep the brand card background white */
+    color: black;
+    /* Keep text inside the cards black */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    /* Light border to match dark mode aesthetics */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for card depth */
+    filter: brightness(80%);
+}
+
+body.dark-mode #popular-brands h2 {
+    color: #e0e0e0;
+    /* Light heading color */
+}
+
+body.dark-mode #popular-brands .brand-card:hover {
+    background-color: #827f7f;
+    /* Slightly change the card background on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* Add shadow on hover */
+}
+
+/* FAQ Section in Dark Mode */
+body.dark-mode #faq {
+    background-color: #3b3b3b;
+    /* Dark background for the section */
+}
+
+body.dark-mode #faq h2 {
+    color: white;
+}
+
+body.dark-mode .faqs {
+    background-color: #131313;
+}
+
+/* Footer Section in Dark Mode */
+body.dark-mode #footer {
+    background: linear-gradient(to right, #2b2b2b, #4a4949,#2b2b2b) !important;
+    color: white !important;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+
+    /* Adjust styles for mobile screens in dark mode */
+    body.dark-mode .Navbar {
+        background: linear-gradient(to right, #2a2a2a, #333333);
+    }
+
+    body.dark-mode .products-section,
+    body.dark-mode .faq-section,
+    body.dark-mode .popular-brands {
+        padding: 10px;
+        background-color: #282828;
+    }
+
+    body.dark-mode .footer {
+        background: linear-gradient(to right, #222222, #2a2a2a);
+    }
+}
+
+/* Media Queries for 490px and below */
+@media (max-width: 490px) {
+
+    /* Navbar */
+    body.dark-mode .Navbar {
+        background: linear-gradient(to right, #1c1c1c, #2a2a2a);
+    }
+
+    body.dark-mode .Search__Input {
+        background-color: #333333;
+        color: white;
+        border: 1px solid white;
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+
+    body.dark-mode .Search__Button {
+        background-color: #16a085;
+        font-size: 14px;
+    }
+
+    /* Menubar */
+    body.dark-mode .menubar {
+        background-color: #242424;
+    }
+
+    /* Sale Image and Button */
+    body.dark-mode .Sale-image img {
+        filter: brightness(70%);
+    }
+
+    body.dark-mode .Sale-image button {
+        background-color: #16a085;
+        font-size: 14px;
+        /* Adjust button size for smaller screens */
+    }
+
+    /* Products Section */
+    body.dark-mode .products-section {
+        padding: 10px;
+        background-color: #282828;
+    }
+
+    body.dark-mode .products-section .product-card {
+        background-color: #3a3a3a;
+        font-size: 14px;
+        /* Adjust text size for smaller screens */
+    }
+
+    /* Popular Brands Section */
+    body.dark-mode .popular-brands {
+        background-color: #282828;
+        padding: 10px;
+    }
+
+    body.dark-mode .popular-brands .brand-card {
+        background-color: #333333;
+    }
+
+    /* FAQ Section */
+    body.dark-mode .faq-section {
+        background-color: #333333;
+        padding: 10px;
+    }
+
+    body.dark-mode .faq-section .faq-card {
+        background-color: #3a3a3a;
+    }
+
+    /* Footer Section */
+    body.dark-mode .footer {
+        background: linear-gradient(to right, #222222, #333333);
+        padding: 20px 10px;
+    }
+
+    /* General font-size adjustments for smaller screens */
+    body.dark-mode p,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6 {
+        font-size: 14px;
+    }
+}
+
+/* Media Queries for Mobile and Tablet */
+@media screen and (max-width: 768px) {
+    .Navbar__Menu {
+        display: none;
+    }
+
+    .contact-us {
+        display: none !important;
+        /* Hide Contact Us on mobile and tablet */
+    }
+
+    .Navbar__S3__button3 {
+        display: inline-block;
+        /* Show Get App button on mobile and tablet */
+        padding: 4px 8px;
+        /* Further reduced padding */
+        font-size: 8px;
+        /* Further reduced font size */
+        border-radius: 10px;
+        /* Slightly reduced border radius */
+    }
+
+    .Navbar__S0 {
+        display: block;
+        /* Show hamburger menu on mobile and tablet */
+    }
+
+    .Navbar__S2 p {
+        font-size: 14px;
+        /* Slightly reduced font size */
+    }
+
+    .Navbar__S1 h1 {
+        font-size: 18px;
+        /* Slightly reduced font size */
+    }
+
+    .Navbar__S3__button2 {
+        padding: 4px 8px;
+        /* Further reduced padding */
+        font-size: 8px;
+        /* Further reduced font size */
+        border-radius: 10px;
+        /* Slightly reduced border radius */
+    }
+
+    /* Mobile Menu Styles */
+    #navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on navbar height */
+        right: 20px;
+        background-color: #34495e;
+        /* Keeping original background color */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+    }
+
+    #navbar-links.active {
+        display: flex;
+    }
+
+    .Navbar__S2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Navbar__S3 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Navbar {
+        padding: 8px 15px;
+    }
+
+    .Navbar__S1 h1 {
+        font-size: 16px;
+        /* Further reduced font size */
+    }
+
+    .Navbar__S2 p {
+        font-size: 12px;
+        /* Further reduced font size */
+    }
+
+    .Navbar__S3__button3,
+    .Navbar__S3__button2 {
+        padding: 3px 6px;
+        /* Further reduced padding */
+        font-size: 8px;
+        /* Further reduced font size */
+        border-radius: 8px;
+        /* Further adjusted border radius */
+    }
+
+    .Navbar__S0 {
+        font-size: 20px;
+        /* Adjusted icon size */
+    }
+}

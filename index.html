@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra - An afforadable ecommerce website</title>
+    <link rel="icon" href="./image/Nostra Icon.png" type="image/png">
+    <!--Google Style Sheet for fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+    <!--My Style Sheet-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!--Font Awesome Cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- Extra Offer Popup -->
+    <div id="promoPopup" class="extraOfferPopup">
+        <div class="extraOfferPopup-content">
+            <span class="extraOfferPopup-close">&times;</span>
+            <i class="fa-solid fa-gift promo-icon"></i>
+            <h2>Sign in and Get Extra 20% on Selected Products!</h2>
+            <p>Hurry up! Limited time offer on selected items.</p>
+        </div>
+    </div>
+    <!-- Existing Navbar -->
+    <div class="Navbar">
+        <div class="Navbar__S01">
+            <div class="Navbar__S0" id="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="Navbar__S1">
+                <a href="index.html"><img src="./image/Nostra Icon.png" alt="Nostra Logo"></a>
+                <h1>Nostra</h1>
+            </div>
+        </div>
+
+        <!-- Navbar Menu -->
+        <div class="Navbar__Menu">
+            <a href="#top">
+                <p>Home</p>
+            </a>
+            <a href="#new-arrivals">
+                <p>New Arrivals</p>
+            </a>
+            <a href="#most-wanted">
+                <p>Most Wanted</p>
+            </a>
+            <a href="product.html">
+                <p>Products</p>
+            </a>
+        </div>
+
+        <div class="Navbar__S02">
+            <div class="toggle-dark-mode">
+                <button class="dark-mode-btn" title="Dark Mode">
+                    <i id="dark-mode-icon" class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="Navbar__S2">
+                <p title="Cart" class="cart"><i class="fa-sharp fa-solid fa-cart-shopping" style="color: #f0f2f4;"></i></p>
+                <a href="contacct.html"><p class="contact-us" title="Contact US">Contact Us</p></a>
+            </div>
+            <div class="Navbar__S3">
+                <button class="Navbar__S3__button3" title="Get App">Get App</button>
+                <a href=""><button class="Navbar__S3__button2" title="Sign in">Sign in</button></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add this Side Menu Popup -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+        <a href="#top">Home</a>
+        <a href="#new-arrivals">New Arrivals</a>
+        <a href="#most-wanted">Most Wanted</a>
+        <a href="product.html">Products</a>
+        <a href="contacct.html">Contact Us</a>
+    </div>
+    <!-- Sign-in Popup -->
+    <div id="signin-popup" class="popup hidden">
+        <div class="popup-content">
+            <span id="close-popup" class="close-btn">X</span>
+            <h2>Sign In</h2>
+            <form id="signin-form">
+                <input type="email" id="signin-email" placeholder="Email" required>
+                <input type="password" id="signin-password" placeholder="Password" required>
+                <span id="password-error" class="password-error">Password must be at least 6 characters long</span>
+                <p><a href="#">Forgot password?</a></p>
+                <button type="submit">Sign In</button>
+                <div class="divider">or</div>
+                <button class="google-signin" type="button">
+                    <i class="fab fa-google"></i> Sign in with Google
+                </button>
+            </form>
+            <p>Don't have an account? <a href="#">Create an account</a></p>
+        </div>
+    </div>
+    <!-- Menubar -->
+    <div class="menubar">
+        <section class="grid grid-cols-3 md:grid-cols-6 gap-4 p-2 justify-items-center text-center">
+
+            <div class="flex flex-col items-center" title="Top Offers">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 mx-auto cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m8.99 14.993 6-6m6 3.001c0 1.268-.63 2.39-1.593 3.069a3.746 3.746 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043 3.745 3.745 0 0 1-3.068 1.593c-1.268 0-2.39-.63-3.068-1.593a3.745 3.745 0 0 1-3.296-1.043 3.746 3.746 0 0 1-1.043-3.297 3.746 3.746 0 0 1-1.593-3.068c0-1.268.63-2.39 1.593-3.068a3.746 3.746 0 0 1 1.043-3.297 3.745 3.745 0 0 1 3.296-1.042 3.745 3.745 0 0 1 3.068-1.594c1.268 0 2.39.63 3.068 1.593a3.745 3.745 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.297 3.746 3.746 0 0 1 1.593 3.068ZM9.74 9.743h.008v.007H9.74v-.007Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm4.125 4.5h.008v.008h-.008v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                </svg>
+                <a href="#todaysdeals"><span class="text-sm cursor-pointer">Top Offers</span></a>
+            </div>
+
+            <div class="flex flex-col items-center" title="Smartphones">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 mx-auto cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                </svg>
+                <a href="product.html#Smarphones"><span class="text-sm cursor-pointer">Smartphones</span></a>
+            </div>
+
+            <div class="flex flex-col items-center" title="Electronics">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 mx-auto cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M8.25 3v1.5M4.5 8.25H3m18 0h-1.5M4.5 12H3m18 0h-1.5m-15 3.75H3m18 0h-1.5M8.25 19.5V21M12 3v1.5m0 15V21m3.75-18v1.5m0 15V21m-9-1.5h10.5a2.25 2.25 0 0 0 2.25-2.25V6.75a2.25 2.25 0 0 0-2.25-2.25H6.75A2.25 2.25 0 0 0 4.5 6.75v10.5a2.25 2.25 0 0 0 2.25 2.25Zm.75-12h9v9h-9v-9Z" />
+                </svg>
+                <a href="product.html#Electronics"><span class="text-sm cursor-pointer">Electronics</span></a>
+            </div>
+
+            <div class="flex flex-col items-center" title="Home Appliances">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 mx-auto cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M7 2.25h10A2.25 2.25 0 0 1 19.25 4.5v15A2.25 2.25 0 0 1 17 21.75H7A2.25 2.25 0 0 1 4.75 19.5v-15A2.25 2.25 0 0 1 7 2.25Zm1.5 0v4.5m7.5-4.5v4.5m-9 12.75h10m-7.5-4.5h5.25" />
+                </svg>
+                <a href="product.html#Home-Appliances"><span class="text-sm cursor-pointer">Home Appliances</span></a>
+            </div>
+
+            <div class="flex flex-col items-center" title="Grocery">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 mx-auto cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125" />
+                </svg>
+                <a href="product.html#Groceries"><span class="text-sm cursor-pointer">Grocery</span></a>
+            </div>
+
+            <div class="flex flex-col items-center" title="Clothing">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 sm:w-8 sm:h-8 mx-auto cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                </svg>
+                <a href="product.html#Clothing"><span class="text-sm cursor-pointer">Clothing</span></a>
+            </div>
+        </section>
+    </div>
+    <!-- Sale Image Slider Section -->
+    <section class="mt-4 relative overflow-hidden" id="Sale-slider">
+        <!-- Sale Slider Container -->
+        <div class="sale-slider-container relative max-w-full overflow-hidden">
+            <!-- Sale Images Slider -->
+            <div id="sale-slider-images" class="sale-slider-scroll flex transition-transform duration-300">
+                <!-- Sale Image 1 -->
+                <div class="sale-slide relative w-full">
+                    <img class="w-full h-48 sm:h-60 md:h-72 object-cover transform transition-transform duration-700 ease-in-out hover:scale-105"
+                        src="./image/sale-image1.jpg" alt="Sale Image 1">
+                    <div class="absolute inset-0 flex items-center justify-center text-center bg-black bg-opacity-60">
+                        <div class="text-white p-2 sm:p-4 transform translate-y-10 animate-slideUp">
+                            <h2 class="text-lg sm:text-xl md:text-2xl font-bold">Limited Time Offer!</h2>
+                            <p class="mt-1 sm:mt-2 text-sm sm:text-md md:text-lg font-bold">Get up to 50% off on
+                                selected items.</p>
+                            <a href="product.html"
+                                class="mt-2 sm:mt-4 inline-block px-4 sm:px-6 py-1 sm:py-2 bg-yellow-400 text-black font-semibold rounded transition-transform duration-300 ease-in-out transform hover:bg-yellow-500 hover:scale-105 hover:shadow-lg"
+                                title="Shop Now">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Image 2 -->
+                <div class="sale-slide relative w-full">
+                    <img class="w-full h-48 sm:h-60 md:h-72 object-cover transform transition-transform duration-700 ease-in-out hover:scale-105"
+                        src="./image/sale-image2.jpg" alt="Sale Image 2">
+                    <div class="absolute inset-0 flex items-center justify-center text-center bg-black bg-opacity-60">
+                        <div class="text-white p-2 sm:p-4 transform translate-y-10 animate-slideUp">
+                            <h2 class="text-lg sm:text-xl md:text-2xl font-bold">Exclusive Discounts!</h2>
+                            <p class="mt-1 sm:mt-2 text-sm sm:text-md md:text-lg font-bold">Save big on new arrivals.
+                            </p>
+                            <a href="product.html"
+                                class="mt-2 sm:mt-4 inline-block px-4 sm:px-6 py-1 sm:py-2 bg-yellow-400 text-black font-semibold rounded transition-transform duration-300 ease-in-out transform hover:bg-yellow-500 hover:scale-105 hover:shadow-lg"
+                                title="Shop Now">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sale Image 3 -->
+                <div class="sale-slide relative w-full">
+                    <img class="w-full h-48 sm:h-60 md:h-72 object-cover transform transition-transform duration-700 ease-in-out hover:scale-105"
+                        src="./image/sale-image3.jpg" alt="Sale Image 3">
+                    <div class="absolute inset-0 flex items-center justify-center text-center bg-black bg-opacity-60">
+                        <div class="text-white p-2 sm:p-4 transform translate-y-10 animate-slideUp">
+                            <h2 class="text-lg sm:text-xl md:text-2xl font-bold">Hot Deals Today!</h2>
+                            <p class="mt-1 sm:mt-2 text-sm sm:text-md md:text-lg font-bold">Up to 70% off on
+                                best-selling items.</p>
+                            <a href="product.html"
+                                class="mt-2 sm:mt-4 inline-block px-4 sm:px-6 py-1 sm:py-2 bg-yellow-400 text-black font-semibold rounded transition-transform duration-300 ease-in-out transform hover:bg-yellow-500 hover:scale-105 hover:shadow-lg"
+                                title="Shop Now">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slider Buttons -->
+            <button id="prevSaleSlide"
+                class="absolute left-2 top-1/2 transform -translate-y-1/2 bg-transparent hover:bg-gray-800 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg md:p-4 md:text-xl">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextSaleSlide"
+                class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-transparent hover:bg-gray-800 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg md:p-4 md:text-xl">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+    <!-- Todays Deals -->
+    <div class="productcontainer mx-auto my-10" id="todaysdeals">
+        <h1 class="text-2xl md:text-3xl font-bold text-pink-500 text-center mb-6">Today's Deals</h1>
+        <!-- Slider Container -->
+        <div class="slider-container">
+            <!-- Product Slider -->
+            <div id="product-slider"
+                class="scrollbar-hide flex space-x-6 overflow-x-scroll transition-transform duration-300">
+                <!-- Product 1 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Apple iPhone 15 (128 GB)">
+                    <img src="./image/Deal-1.png" class="w-24 h-34 md:w-28 md:h-38 mx-auto" alt="Apple iPhone 15">
+                    <h2>Apple iPhone 15 (128 GB)</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg">4.4 ★ (21,345)</p>
+                    <p class="text-red-500 font-bold text-sm md:text-lg">₹ 59,999</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg">₹ 79,999</p>
+                    <p class="discount-badge text-sm md:text-lg">25% OFF</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Sony Bravia 55" 4K Ultra HD TV">
+                    <img src="./image/Deal-2.png" class="w-34 h-43  mx-auto" alt="Sony TV">
+                    <h2>Sony Bravia 55" 4K Ultra HD TV</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.1 ★ (11,446)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 54,999</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 99,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">45% OFF</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Allen Solly Men's Polo">
+                    <img src="./image/Deal-3.png" class="w-24 h-34 md:w-28 md:h-38  mx-auto" alt="Allen Solly Polo">
+                    <h2>Allen Solly Men's Polo</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">3.9 ★ (1,293)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 499</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 1,099</p>
+                    <p class=" discount-badge text-sm md:text-lg"">55% OFF</p>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Dining Table 4 Seater Set">
+                    <img src="./image/Deal-4.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto" alt="Dining Table">
+                    <h2>Dining Table 4 Seater Set</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.3 ★ (2,389)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 13,400</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 45,000</p>
+                    <p class=" discount-badge text-sm md:text-lg"">70% OFF</p>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Sony WH-1000XM5 Headphones">
+                    <img src="./image/Deal-5.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto" alt="Sony Headphones">
+                    <h2>Sony WH-1000XM5 Headphones</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.8 ★ (8,345)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 29,990</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 35,990</p>
+                    <p class=" discount-badge text-sm md:text-lg"">17% OFF</p>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="KitchenAid Stand Mixer">
+                    <img src="./image/Deal-6.png" class="w-32 h-35 md:w-36 md:h-39 mx-auto"" alt=" KitchenAid Mixer">
+                    <h2>KitchenAid Stand Mixer</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.6 ★ (3,676)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 24,499</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 32,000</p>
+                    <p class=" discount-badge text-sm md:text-lg"">23% OFF</p>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Mi Band 6 Fitness Tracker">
+                    <img src="./image/Deal-7.png" class="w-22 h-28 md:w-26 md:h-32  mx-auto" alt="Mi Band">
+                    <h2>Mi Band 6 Fitness Tracker</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.2 ★ (10,754)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 2,499</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 3,499</p>
+                    <p class=" discount-badge text-sm md:text-lg"">28% OFF</p>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card rounded-lg shadow-md p-4" title="Canon EOS 1500D Camera">
+                    <img src="./image/Deal-8.png" class="w-32 h-35 md:w-36 md:h-39 mx-auto" alt="Canon Camera">
+                    <h2>Canon EOS 1500D Camera</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.5 ★ (3,012)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 34,999</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 40,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">15% OFF</p>
+                </div>
+            </div>
+            <!-- Slider buttons -->
+            <button id="prevSlide"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextSlide"
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    <!-- New Arrivals -->
+    <div id="new-arrivals" class="productcontainer mx-auto my-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-blue-950 text-center mb-6">New Arrivals</h1>
+        <!-- Slider Container -->
+        <div class="slider-container">
+            <!-- Product Slider -->
+            <div id="product-slider1"
+                class="scrollbar-hide flex space-x-6 overflow-x-scroll transition-transform duration-300">
+                <!-- Product 1 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="Apple iPhone 16 (128 GB)">
+                    <img src="./image/NA-1.png" class="w-24 h-34 md:w-28 md:h-38 mx-auto" alt="Apple iPhone 16">
+                    <h2>Apple iPhone 16 (128 GB)</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.1 ★ (11,374)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 75,999</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 79,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">5% OFF</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="Empero Armani Premium Handbag">
+                    <img src="./image/NA-2.png" class="w-32 h-39 mx-auto" alt="Armani HAndbag">
+                    <h2>Empero Armani Premium Handbag</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.3 ★ (1,371)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 29,999</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 34,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">14% OFF</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="Allen Solly Men's Polo">
+                    <img src="./image/Deal-3.png" class="w-24 h-34 md:w-28 md:h-38  mx-auto" alt="Allen Solly Polo">
+                    <h2>Allen Solly Men's Polo</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">3.9 ★ (1,293)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 499</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 1,099</p>
+                    <p class=" discount-badge text-sm md:text-lg"">55% OFF</p>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="Daawat Pulav Basmati Rice 5Kg">
+                    <img src="./image/NA-5.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto"
+                        alt="Daawat Pulav Basmati Rice 5Kg">
+                    <h2>Daawat Pulav Basmati Rice 5Kg</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.3 ★ (1,324)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 659</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 725</p>
+                    <p class=" discount-badge text-sm md:text-lg"">10% OFF</p>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="KitchenAid Stand Mixer">
+                    <img src="./image/Deal-5.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto" alt="Sony Headphones">
+                    <h2>Sony WH-1000XM5 Headphones</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.8 ★ (8,345)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 29,990</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 35,990</p>
+                    <p class=" discount-badge text-sm md:text-lg"">17% OFF</p>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="KitchenAid Stand Mixer">
+                    <img src="./image/Deal-6.png" class="w-36 h-39  mx-auto"" alt=" KitchenAid Mixer">
+                    <h2>KitchenAid Stand Mixer</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.6 ★ (3,676)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 24,499</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 32,000</p>
+                    <p class=" discount-badge text-sm md:text-lg"">23% OFF</p>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4"
+                    title="Vaseline Cocoa Glow Serum In Lotion, 400 ml ">
+                    <img src="./image/NA-6.png" class="w-26 h-32  mx-auto"
+                        alt="Vaseline Cocoa Glow Serum In Lotion, 400 ml ">
+                    <h2>Vaseline Cocoa Glow Serum In Lotion, 400 ml </h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.2 ★ (10,754)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 274</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 435</p>
+                    <p class=" discount-badge text-sm md:text-lg"">37% OFF</p>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card bg-blue-100 rounded-lg shadow-md p-4" title="Nikon D7500 Camera">
+                    <img src="./image/NA-4.png" class="w-36 h-39  mx-auto" alt="Nikon Camera">
+                    <h2>Nikon D7500 Camera </h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.5 ★ (3,012)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 89,990</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 94,950</p>
+                    <p class=" discount-badge text-sm md:text-lg"">5% OFF</p>
+                </div>
+            </div>
+            <!-- Slider buttons -->
+            <button id="prevSlide1"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextSlide1"
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    <!--Most WAnted -->
+    <div id="most-wanted" class="productcontainer mx-auto my-10">
+        <h1 class="text-2xl md:text-3xl font-bold text-red-600 text-center mb-6">Most Wanted</h1>
+        <!-- Slider Container -->
+        <div class="slider-container">
+            <!-- Product Slider -->
+            <div id="product-slider2"
+                class="scrollbar-hide flex space-x-6 overflow-x-scroll transition-transform duration-300">
+                <!-- Product 1 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4" title="Samsung Galaxy S23 FE 128GB ">
+                    <img src="./image/MW-1.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto"
+                        alt="Samsung Galaxy S23 FE 128GB">
+                    <h2>SAMSUNG Galaxy S23 FE 128GB</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.7 ★ (65,662)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 31,880</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 79,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">60% OFF</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4"
+                    title="JBL Go 3 Ultra Portable Bluetooth Speaker">
+                    <img src="./image/MW-2.png" class="w-32 h-35 md:w-36 md:h-39 mx-auto"
+                        alt="JBL Go 3 Ultra Portable Bluetooth Speaker">
+                    <h2>JBL Go 3 Ultra Portable Bluetooth Speaker</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.0 ★ (4,643)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 2,298</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 3,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">43% OFF</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4"
+                    title="POND'S Bright Miracle Detox Facewash 100gm">
+                    <img src="./image/MW-3.png" class="w-32 h-35 md:w-36 md:h-39 mx-auto"
+                        alt="POND'S Bright Miracle Detox Facewash 100gm">
+                    <h2>POND'S Bright Miracle Detox Facewash 100gm</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">3.7 ★ (10,832)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 268</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 450</p>
+                    <p class=" discount-badge text-sm md:text-lg"">40% OFF</p>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4" title="Daawat Pulav Basmati Rice 5Kg">
+                    <img src="./image/NA-5.png" class="w-32 h-35 md:w-36 md:h-39 mx-auto"
+                        alt="Daawat Pulav Basmati Rice 5Kg">
+                    <h2>Daawat Pulav Basmati Rice 5Kg</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.3 ★ (1,324)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 659</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 725</p>
+                    <p class=" discount-badge text-sm md:text-lg"">10% OFF</p>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4"
+                    title="Happilo 100% Natural Premium California Almonds 1kg">
+                    <img src="./image/MW-4.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto"
+                        alt="Happilo 100% Natural Premium California Almonds 1kg">
+                    <h2>Happilo 100% Natural Premium California Almonds 1kg</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.3 ★ (18,355)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 901</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 1,350</p>
+                    <p class=" discount-badge text-sm md:text-lg"">30% OFF</p>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4"
+                    title="The Best Works of Rabindranath Tagore Boxed Set">
+                    <img src="./image/MW-5.png" class="w-32 h-35 md:w-36 md:h-39  mx-auto"" alt=" The Best Works of
+                        Rabindranath Tagore Boxed Set">
+                    <h2>The Best Works of Rabindranath Tagore Boxed Set</h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.9 ★ (32,735)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 478</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 649</p>
+                    <p class=" discount-badge text-sm md:text-lg"">26% OFF</p>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4"
+                    title="Vaseline Cocoa Glow Serum In Lotion, 400 ml ">
+                    <img src="./image/NA-6.png" class="w-26 h-32  mx-auto"
+                        alt="Vaseline Cocoa Glow Serum In Lotion, 400 ml ">
+                    <h2>Vaseline Cocoa Glow Serum In Lotion, 400 ml </h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">4.2 ★ (10,754)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 274</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 435</p>
+                    <p class=" discount-badge text-sm md:text-lg"">37% OFF</p>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card bg-red-100 rounded-lg shadow-md p-4"
+                    title="MIMOSA Women's Traditional Ussi Kanjivaram Art Silk Saree ">
+                    <img src="./image/MW-6.png" class="w-26 h-32  mx-auto"
+                        alt="MIMOSA Women's Traditional Ussi Kanjivaram Art Silk Saree ">
+                    <h2>MIMOSA Women's Traditional Ussi Kanjivaram Art Silk Saree </h2>
+                    <p class="text-green-600 font-semibold text-sm md:text-lg"">3.8 ★ (2,317)</p>
+                    <p class=" text-red-500 font-bold text-sm md:text-lg"">₹ 1,660</p>
+                    <p class="line-through text-gray-500 text-sm md:text-lg"">₹ 6,999</p>
+                    <p class=" discount-badge text-sm md:text-lg"">76% OFF</p>
+                </div>
+            </div>
+            <!-- Slider buttons -->
+            <button id="prevSlide2"
+                class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button id="nextSlide2"
+                class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-pink-500 hover:bg-pink-600 text-white rounded-full p-2 focus:outline-none transition duration-200 shadow-lg">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Popular Brands -->
+    <section id="popular-brands" class="py-6 bg-gray-100">
+        <h2 class="text-center text-2xl md:text-3xl font-bold mb-8 text-gray-800">
+            Popular Brands
+        </h2>
+        <div class="flex flex-wrap justify-center gap-2 mx-auto max-w-5xl px-3">
+            <!-- Apple -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="Apple">
+                <a href="#apple" class="block">
+                    <img src="./image/apple.png" alt="Apple" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+            <!-- Adidas -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="Adidas">
+                <a href="#adidas" class="block">
+                    <img src="./image/adidas.png" alt="Adidas" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+            <!-- Allen Solly -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="Allen Solly">
+                <a href="#allen-solly" class="block">
+                    <img src="./image/Allen Solly.png" alt="Allen Solly"
+                        class="w-12 md:w-16 lg:w-20 h-auto object-contain">
+                </a>
+            </div>
+            <!-- Samsung -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="Samsung">
+                <a href="#samsung" class="block">
+                    <img src="./image/Samsung.png" alt="Samsung" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+            <!-- HP -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="HP">
+                <a href="#hp" class="block">
+                    <img src="./image/hp.png" alt="HP" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+            <!-- Titan -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="Titan">
+                <a href="#titan" class="block">
+                    <img src="./image/titan.png" alt="Titan" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+            <!-- Nike -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="Nike">
+                <a href="#nike" class="block">
+                    <img src="./image/nike.png" alt="Nike" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+            <!-- JBL -->
+            <div class="brand-card flex justify-center items-center p-2 md:p-4 bg-white rounded-lg shadow hover:shadow-lg transition-shadow duration-300 ease-in-out cursor-pointer animate-zoomIn"
+                title="JBL">
+                <a href="#jbl" class="block">
+                    <img src="./image/jbl.png" alt="JBL" class="w-12 md:w-16 h-auto object-contain">
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- FAQs -->
+    <section class="py-8 bg-gray-50" id="faq">
+        <h2 class="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-800">
+            Frequently Asked Questions
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-3 md:space-y-4">
+            <!-- Question 1 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    What payment methods do you accept?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    We accept all major credit and debit cards, net banking, UPI, and digital wallets like PayPal,
+                    Google Pay, and Paytm.
+                </p>
+            </details>
+
+            <!-- Question 2 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    How long does delivery take?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    Delivery usually takes 3-5 business days, depending on your location. Express shipping options are
+                    available during checkout.
+                </p>
+            </details>
+
+            <!-- Question 3 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    Can I return or exchange an item?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    Yes, you can return or exchange items within 30 days of purchase. Items must be unused and in their
+                    original packaging. Please refer to our return policy for more details.
+                </p>
+            </details>
+
+            <!-- Question 4 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    How can I track my order?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    You can track your order using the tracking link provided in the shipping confirmation email. You
+                    can also check the status by logging into your account.
+                </p>
+            </details>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer" class="text-white py-6 md:py-8"
+        style="width: 100%; background: linear-gradient(to right, #3b82f6, #ec4899, #a855f7); margin: 0;">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <!-- About Us Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">About Us</h3>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li><a href="#!" class="text-sm hover:underline">Our Story</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Careers</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Privacy Policy</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">Customer Service</h3>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li><a href="contacct.html" class="text-sm hover:underline">Contact Us</a></li>
+                        <li><a href="#faq" class="text-sm hover:underline">FAQs</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Shipping Information</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Return Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">Contact Us</h3>
+                    <p class="text-xs md:text-sm">001-ABC Street<br>Tamil Nadu, India,<br>XXXXXX</p>
+                    <p class="mt-2 text-xs md:text-sm">Phone: <a href="#" class="hover:underline">+91 - 46758478XX</a>
+                    </p>
+                    <p class="mt-2 text-xs md:text-sm">Email: <a href="#"
+                            class="hover:underline">nostraoff@gmail.com</a></p>
+                </div>
+                <!-- Social Media Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">Follow Us</h3>
+                    <div class="flex space-x-3 md:space-x-4">
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6 md:mt-8">
+                <p class="text-xs md:text-sm">&copy; 2024 Nostra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

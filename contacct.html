@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Nostra</title>
+    <link rel="icon" href="./image/Nostra Icon.png" type="image/png">
+    <!--Google Style Sheet for fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito&display=swap" rel="stylesheet">
+    <!--My Style Sheet-->
+    <link rel="stylesheet" href="contact.css">
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!--Font Awesome Cdn-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <div class="Navbar">
+        <div class="Navbar__S01">
+            <div class="Navbar__S0" id="hamburger-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="Navbar__S1">
+                <a href="index.html"><img src="./image/Nostra Icon.png" alt="Nostra Logo"></a>
+                <h1 class="Header__S1__title">Nostra</h1>
+            </div>
+        </div>
+        <!-- Navbar Menu -->
+        <div class="Navbar__Menu">
+            <a href="index.html">
+                <p>Home</p>
+            </a>
+            <a href="product.html">
+                <p>Products</p>
+            </a>
+        </div>
+        <div class="Navbar__S02">
+            <!-- Dark Mode Toggle Button in Navbar -->
+            <div class="toggle-dark-mode">
+                <button class="dark-mode-btn" title="Dark Mode">
+                    <i id="dark-mode-icon" class="fas fa-moon"></i>
+                </button>
+            </div>
+            <div class="Navbar__S2">
+                <p title="Cart" class="cart"><i class="fa-sharp fa-solid fa-cart-shopping" style="color: #f0f2f4;"></i></p>
+                <p class="contact-us" title="Contact US">Contact Us</p>
+            </div>
+            <div class="Navbar__S3">
+                <button class="Navbar__S3__button3" title="Get App">Get App</button>
+                <a href=""><button class="Navbar__S3__button2" title="Sign in">Sign in</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- Add this Side Menu Popup -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+    </div>
+    <!-- Sign-in Popup -->
+    <div id="signin-popup" class="popup hidden">
+        <div class="popup-content">
+            <span id="close-popup" class="close-btn">X</span>
+            <h2>Sign In</h2>
+            <form id="signin-form">
+                <input type="email" id="signin-email" placeholder="Email" required>
+                <input type="password" id="signin-password" placeholder="Password" required>
+                <span id="password-error" class="password-error">Password must be at least 6 characters long</span>
+                <p><a href="#">Forgot password?</a></p>
+                <button type="submit">Sign In</button>
+                <div class="divider">or</div>
+                <button class="google-signin" type="button">
+                    <i class="fab fa-google"></i> Sign in with Google
+                </button>
+            </form>
+            <p>Don't have an account? <a href="#">Create an account</a></p>
+        </div>
+    </div>
+
+    <!-- Contact Form and Some Informations -->
+    <div class="contact-container-original">
+        <section class="contact-section-original">
+            <div class="contact-header-original">
+                <h1>Contact Us</h1>
+            </div>
+
+            <div class="form-container-original">
+                <!-- Contact Form -->
+                <form class="contact-form-original" id="contactFormOriginal">
+                    <div class="form-group-original">
+                        <label for="nameInputOriginal"><i class="fas fa-user"></i> Name</label>
+                        <input type="text" id="nameInputOriginal" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="form-group-original">
+                        <label for="emailInputOriginal"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="emailInputOriginal" placeholder="Enter your email address" required>
+                    </div>
+
+                    <div class="form-group-original">
+                        <label for="phoneInputOriginal"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="phoneInputOriginal" placeholder="Your Phone Number" required>
+                    </div>
+
+                    <div class="form-group-original">
+                        <label for="messageInputOriginal"><i class="fas fa-comment-dots"></i> Message</label>
+                        <textarea id="messageInputOriginal" placeholder="Your Message..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn-original"><i class="fas fa-paper-plane"></i> Send</button>
+                </form>
+
+                <!-- Contact Details -->
+                <div class="contact-details-original">
+                    <div class="contact-item-original">
+                        <h3><i class="fas fa-headset"></i> Technical Support</h3>
+                        <p><i class="fas fa-envelope"></i> Email: <a
+                                href="mailto:Greenden@gmail.com">nostratechsupport@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Phone: +91 45634761XX</p>
+                    </div>
+
+                    <div class="contact-item-original">
+                        <h3><i class="fas fa-business-time"></i> Sales Questions</h3>
+                        <p><i class="fas fa-envelope"></i> Email: <a
+                                href="mailto:salesgreenden@gmail.com">salesnostra@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Phone: +91 45634763XX</p>
+                    </div>
+
+                    <div class="contact-item-original">
+                        <h3><i class="fas fa-bullhorn"></i> Press</h3>
+                        <p><i class="fas fa-envelope"></i> Email: <a
+                                href="mailto:pressgreen@gmail.com">nostraoff@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Phone: +91 45634762XX</p>
+                    </div>
+
+                    <div class="contact-item-original">
+                        <h3><i class="fas fa-bug"></i> Bug Report</h3>
+                        <p><i class="fas fa-envelope"></i> Email: <a
+                                href="mailto:bugsgdn@gmail.com">bugsatnostra@gmail.com</a></p>
+                        <p><i class="fas fa-phone"></i> Phone: +91 45634764XX</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-container-original">
+                <h1>Our Location</h1>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363153157!3d-37.81720997975166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf577f584bbd7dfe0!2sVictoria!5e0!3m2!1sen!2sau!4v1633050777696!5m2!1sen!2sau"
+                    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+
+            <!-- Popup Modal -->
+            <div class="popupcontact-original" id="popupModalOriginal">
+                <div class="modal-content-original">
+                    <span class="close-original" id="closePopupOriginal">&times;</span>
+                    <p id="popupMessageOriginal"></p>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- FAQs -->
+    <section class="py-8 bg-gray-50" id="faq">
+        <h2 class="text-center text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-gray-800">
+            Frequently Asked Questions
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-3 md:space-y-4">
+            <!-- Question 1 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    What payment methods do you accept?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    We accept all major credit and debit cards, net banking, UPI, and digital wallets like
+                    PayPal,
+                    Google Pay, and Paytm.
+                </p>
+            </details>
+
+            <!-- Question 2 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    How long does delivery take?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    Delivery usually takes 3-5 business days, depending on your location. Express shipping
+                    options are
+                    available during checkout.
+                </p>
+            </details>
+
+            <!-- Question 3 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    Can I return or exchange an item?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    Yes, you can return or exchange items within 30 days of purchase. Items must be unused and
+                    in their
+                    original packaging. Please refer to our return policy for more details.
+                </p>
+            </details>
+
+            <!-- Question 4 -->
+            <details class="faqs p-2 md:p-4 bg-gray-800 text-white border border-gray-700 rounded-lg shadow-sm">
+                <summary class="cursor-pointer text-sm md:text-lg font-semibold">
+                    How can I track my order?
+                </summary>
+                <p class="mt-1 text-xs md:text-lg text-gray-400">
+                    You can track your order using the tracking link provided in the shipping confirmation
+                    email. You
+                    can also check the status by logging into your account.
+                </p>
+            </details>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer" class="text-white py-6 md:py-8"
+        style="width: 100%; background: linear-gradient(to right, #3b82f6, #ec4899, #a855f7); margin: 0;">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                <!-- About Us Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">About Us</h3>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li><a href="#!" class="text-sm hover:underline">Our Story</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Careers</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Privacy Policy</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <!-- Customer Service Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">Customer Service</h3>
+                    <ul class="space-y-1 md:space-y-2">
+                        <li><a href="#!" class="text-sm hover:underline">Contact Us</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">FAQs</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Shipping Information</a></li>
+                        <li><a href="#!" class="text-sm hover:underline">Return Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Contact Info Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">Contact Us</h3>
+                    <p class="text-xs md:text-sm">001-ABC Street<br>Tamil Nadu, India,<br>XXXXXX</p>
+                    <p class="mt-2 text-xs md:text-sm">Phone: <a href="#" class="hover:underline">+91 -
+                            46758478XX</a>
+                    </p>
+                    <p class="mt-2 text-xs md:text-sm">Email: <a href="#"
+                            class="hover:underline">nostraoff@gmail.com</a></p>
+                </div>
+                <!-- Social Media Section -->
+                <div>
+                    <h3 class="font-bold text-base md:text-lg mb-3 md:mb-4">Follow Us</h3>
+                    <div class="flex space-x-3 md:space-x-4">
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#!" class="text-white hover:text-gray-200">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6 md:mt-8">
+                <p class="text-xs md:text-sm">&copy; 2024 Nostra. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="contact.js"></script>
+</body>
+
+</html>

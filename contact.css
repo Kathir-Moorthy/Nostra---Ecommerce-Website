@@ -1,0 +1,892 @@
+/* Reset and Box Sizing */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.Navbar {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to right, #2779fb, #5714f4);
+    /* Corrected closing parenthesis */
+    color: white;
+    /* Ensures text is readable against dark background */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.Navbar__S01 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Hamburger Menu Icon */
+.Navbar__S0 {
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    /* Initially hidden, shown on mobile and tablet */
+    color: white;
+    /* Icon color */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Added transition for smooth effects */
+}
+
+.Navbar__S0:hover {
+    transform: scale(1.2);
+    /* Slight scaling on hover */
+    color: #f0f2f4;
+    /* Change color on hover */
+}
+
+/* Logo and Title */
+.Navbar__S1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.Navbar__S1 img {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s
+}
+
+.Navbar__S1 img:hover {
+    transform: scale(1.2)
+}
+
+.Navbar__S1 h1 {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    /* Ensures title is readable */
+    transition: color 0.3s ease;
+    /* Added transition for smooth color change */
+}
+
+.Navbar__S1 h1:hover {
+    color: #f0f2f4;
+    /* Color change on hover for interactivity */
+}
+
+/* Section 2 of Navbar */
+.Navbar__S02 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.Navbar__Menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bolder;
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.Navbar__Menu p {
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    transition: border-bottom 0.2s ease; /* Smooth transition for border */
+    position: relative; /* Positioning for pseudo-element */
+}
+
+.Navbar__Menu p:hover {
+    border-bottom: 2px solid white; /* Underline effect on hover */
+}
+
+/* Optional: Remove the underline when not hovered */
+.Navbar__Menu p::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0; /* Aligns the underline */
+    height: 2px; /* Thickness of the underline */
+    background: transparent; /* No underline initially */
+    transition: background 0.2s ease; /* Smooth transition for underline */
+}
+
+.Navbar__Menu p:hover::after {
+    background: white; /* Show underline on hover */
+}
+/* Navigation Links */
+.Navbar__S2 {
+    display: flex;
+    gap: 8px;
+}
+.Navbar__S2 p {
+    margin: 0;
+    font-size: 16px;
+    color: white;
+    /* Ensures text is readable */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    /* Added transition for smooth color change */
+}
+
+.Navbar__S2 p:hover {
+    color: #f0f2f4;
+    /* Subtle hover effect */
+}
+
+.contact-us {
+    transition: transform 0.3s;
+    display: none !important;
+}
+
+.contact-us:hover {
+    transform: scale(1.1)
+}
+
+/* Hover Effects for Cart Icon */
+.Navbar__S2 p i {
+    margin-right: 5px;
+    /* Spacing between icon and text */
+    transition: transform 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+.Navbar__S2 p:hover i {
+    transform: scale(1.2);
+    /* Slight scaling on icon hover */
+    color: #f0f2f4;
+    /* Change icon color on hover */
+}
+
+/* Buttons */
+.Navbar__S3 button {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
+}
+
+.Navbar__S3__button3 {
+    background-color: #1abc9c;
+    /* Vibrant teal */
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none;
+    /* Initially hidden, shown on mobile and tablet */
+}
+
+.Navbar__S3__button3:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+.Navbar__S3__button2 {
+    background-color: #e74c3c;
+    /* Vibrant red */
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.Navbar__S3__button2:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+.cart{
+    display: none !important;
+}
+/* Animation for the Navbar */
+.Navbar {
+    animation: fadeInDown 1s ease-in-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Search Input Animation on Focus */
+.Search__Input:focus {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Elevate search bar on focus */
+    transition: box-shadow 0.3s ease;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Slide in for Navbar links when the menu opens */
+#navbar-links.active {
+    animation: slideIn 0.5s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Adding Bounce to Buttons */
+.Navbar__S3 button:hover {
+    animation: bounceHover 0.5s ease-in-out;
+}
+
+@keyframes bounceHover {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Icon Spin Animation */
+.Navbar__S0:hover {
+    animation: spin 0.6s linear;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*Sign in popup*/
+/* General popup styles */
+.hidden {
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1000;
+    text-align: center;
+
+}
+
+.popup-content {
+    position: relative;
+}
+
+.popup input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.popup button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.popup button.google-signin {
+    background-color: #db4437;
+    margin-top: 10px;
+}
+
+.popup .divider {
+    margin: 15px 0;
+    font-size: 12px;
+    color: #888;
+}
+
+.popup a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.popup a:hover {
+    text-decoration: underline;
+}
+
+.popup .close-btn {
+    position: absolute !important;
+    top: -15px !important;
+    right: 10px !important;
+    font-size: 30px;
+    cursor: pointer;
+    color: red;
+}
+
+.password-error {
+    color: red;
+    display: none;
+    font-size: 12px;
+}
+
+/* Dark mode styles */
+body.dark-mode .popup {
+    background-color: #333333;
+    color: white;
+}
+
+body.dark-mode .popup input {
+    background-color: #444444;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark-mode .popup a {
+    color: #FFDD57;
+}
+
+body.dark-mode .popup button {
+    background-color: black;
+    color: white;
+    border: 1px solid black;
+    transition: 0.2s ease-in-out;
+}
+
+body.dark-mode .popup button:hover {
+    background-color: #444444;
+    border: 1px solid #444444;
+}
+
+body.dark-mode .close-btn {
+    color: white;
+}
+
+/* Background blur when popup is active */
+body.popup-active::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    backdrop-filter: blur(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .popup {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .popup input,
+    .popup button {
+        font-size: 14px;
+    }
+}
+
+/* Side Menu Styling */
+.side-menu {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    /* Hidden by default */
+    background-color: #5714f4;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.side-menu a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #8f62f7;
+}
+
+.side-menu .close-btn {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    font-size: 36px;
+    color: white;
+    padding: 10px 15px;
+}
+
+/* Show Side Menu */
+.side-menu.show {
+    left: 0;
+}
+
+/* Contact Us */
+/* Contact Container */
+.contact-container-original {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */
+}
+
+/* Contact Header */
+.contact-header-original h1 {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Form Container */
+.form-container-original {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Contact Form */
+.contact-form-original {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group-original {
+    display: flex;
+    flex-direction: column;
+}
+
+#nameInputOriginal, #emailInputOriginal, #phoneInputOriginal, #messageInputOriginal {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    outline: none;
+    background-color: #ecf0f1;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#nameInputOriginal:focus, #emailInputOriginal:focus, #phoneInputOriginal:focus, #messageInputOriginal:focus {
+    background-color: #f1f1f1;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.3);
+}
+.form-container-original textarea {
+    resize: vertical;
+    background-color: #f1f1f1;
+}
+
+/* Submit Button */
+.submit-btn-original {
+    padding: 14px;
+    background-color: #3498db;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-btn-original:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+/* Contact Details */
+.contact-details-original {
+    flex: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.contact-item-original {
+    margin-bottom: 20px;
+}
+.contact-item-original h3 {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.contact-item-original p{
+    color: rgb(35, 34, 34);
+}
+/* Popup Modal */
+.popupcontact-original {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content-original {
+    background: linear-gradient(to right, #176ef9, #4e08f3); /* Match with Nostra navbar color */
+    color: white;
+    margin: 15% auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close-original {
+    color: white;
+    float: right;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-original:hover {
+    color: #aaa;
+}
+#popupModalOriginal #popupMessageOriginal {
+    font-size: 16px !important;
+}
+/* Media Queries */
+@media (max-width: 780px) {
+    .form-container-original {
+        flex-direction: column;
+    }
+
+    .contact-details-original {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Adjust layout for small screens */
+    .form-container-original {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .contact-form-original, .contact-details-original {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #nameInputOriginal, #emailInputOriginal, #phoneInputOriginal, #messageInputOriginal {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .submit-btn-original {
+        padding: 12px;
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .contact-header-original h1 {
+        font-size: 1rem !important;
+        margin-bottom: 15px;
+    }
+
+    /* Map adjustments for 600px width */
+    .map-container-original {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Shorten the height of the iframe for 600px screens */
+    iframe {
+        height: 200px; /* Adjusted height for small screens */
+    }
+
+    /* Popup modal adjustments */
+    .modal-content-original {
+        width: 90%;
+        max-width: 350px;
+        padding: 15px;
+    }
+
+    .close-original {
+        font-size: 24px;
+    }
+    .map-container-original h1{
+        font-size: 1rem !important;
+    }
+}
+.map-container-original h1{
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(20px); /* Move down */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+#faq{
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */
+}
+#footer{
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */
+}
+/* General Dark Mode Styles */
+body.dark-mode {
+    background-color: #3B3B3B;
+    color: #e0e0e0;
+}
+
+/* Navbar in Dark Mode */
+body.dark-mode .Navbar {
+    background: linear-gradient(to right, #333333, #444444);
+}
+body.dark-mode .Navbar__S3 button {
+    background-color: #121212;
+    color: white;
+}
+
+body.dark-mode .side-menu {
+    background-color: #333;
+}
+
+body.dark-mode .side-menu a:hover {
+    background-color: #575757;
+}
+body.dark-mode .contact-container-original{
+    background-color: #3B3B3B;
+    color: white;
+}
+
+body.dark-mode .contact-header-original h1{
+    color: white;
+}
+body.dark-mode .form-container-original{
+    background-color: #302f2f;
+}
+
+body.dark-mode .form-container-original input{
+    background-color: #575757 !important;
+    box-shadow: transparent;
+}
+body.dark-mode .form-container-original textarea{
+    background-color: #575757 !important;
+    box-shadow: transparent;
+}
+body.dark-mode .contact-details-original{
+    background-color: #1f1f1f;
+}
+body.dark-mode .contact-item-original p{
+    color: white;
+}
+body.dark-mode .map-container-original h1{
+    color: white;
+}
+body.dark-mode .submit-btn-original{
+    background-color: #1c1717;
+}
+body.dark-mode .submit-btn-original:hover{
+    background-color: #363737;
+    border: none;
+}
+body.dark-mode .modal-content-original{
+    background: linear-gradient(to right, #2e2e2e, #2c2c2c); /* Black-greyish gradient for dark mode */
+}
+/* FAQ Section in Dark Mode */
+body.dark-mode #faq {
+    background-color: #3b3b3b;
+    /* Dark background for the section */
+}
+
+body.dark-mode #faq h2 {
+    color: white;
+}
+
+body.dark-mode .faqs {
+    background-color: #131313;
+}
+
+/* Footer Section in Dark Mode */
+body.dark-mode #footer {
+    background: linear-gradient(to right, #2b2b2b, #4a4949, #2b2b2b) !important;
+    color: white !important;
+}
+/* Media Queries */
+/* Media Queries for Mobile and Tablet */
+@media screen and (max-width: 768px) {
+    .contact-us {
+        display: none !important;
+        /* Hide Contact Us on mobile and tablet */
+    }
+
+    .Navbar__S3__button3 {
+        display: inline-block;
+        /* Show Get App button on mobile and tablet */
+        padding: 4px 8px;
+        /* Further reduced padding */
+        font-size: 8px;
+        /* Further reduced font size */
+        border-radius: 10px;
+        /* Slightly reduced border radius */
+    }
+
+    .Navbar__S0 {
+        display: block;
+        /* Show hamburger menu on mobile and tablet */
+    }
+
+    .Navbar__Menu{
+        display: none;
+    }
+
+    .Navbar__S2 p {
+        font-size: 14px;
+        /* Slightly reduced font size */
+    }
+
+    .Navbar__S1 h1 {
+        font-size: 18px;
+        /* Slightly reduced font size */
+    }
+
+    .Navbar__S3__button2 {
+        padding: 4px 8px;
+        /* Further reduced padding */
+        font-size: 8px;
+        /* Further reduced font size */
+        border-radius: 10px;
+        /* Slightly reduced border radius */
+    }
+
+    /* Mobile Menu Styles */
+    #navbar-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        /* Adjust based on navbar height */
+        right: 20px;
+        background-color: #34495e;
+        /* Keeping original background color */
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+    }
+
+    #navbar-links.active {
+        display: flex;
+    }
+
+    .Navbar__S2 {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .Navbar__S3 {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .Navbar {
+        padding: 8px 15px;
+    }
+
+    .Navbar__S1 h1 {
+        font-size: 16px;
+        /* Further reduced font size */
+    }
+
+    .Navbar__S2 p {
+        font-size: 12px;
+        /* Further reduced font size */
+    }
+
+    .Navbar__S3__button3,
+    .Navbar__S3__button2 {
+        padding: 3px 6px;
+        /* Further reduced padding */
+        font-size: 8px;
+        /* Further reduced font size */
+        border-radius: 8px;
+        /* Further adjusted border radius */
+    }
+
+    .Navbar__S0 {
+        font-size: 20px;
+        /* Adjusted icon size */
+    }
+}
