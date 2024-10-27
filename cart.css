@@ -805,9 +805,9 @@ body.dark-mode #footer {
 
     .Navbar__S3__button3,
     .Navbar__S3__button2 {
-        padding: 2px 5px;
-        font-size: 6px;
-        border-radius: 6px;
+        padding: 4px 6px !important;
+        font-size: 12px !important;
+        border-radius: 12px !important;
     }
 
     .Navbar__S0 {
