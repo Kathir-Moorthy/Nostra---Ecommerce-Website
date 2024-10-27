@@ -81,12 +81,7 @@ html {
     /* Color change on hover for interactivity */
 }
 
-/* Section 2 of Navbar */
-.Navbar__S02 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+/* Menu of Navbar */
 .Navbar__Menu {
     display: flex;
     justify-content: space-evenly;
@@ -124,50 +119,52 @@ html {
 .Navbar__Menu p:hover::after {
     background: white; /* Show underline on hover */
 }
-/* Navigation Links */
+
+/* Dark Mode, Cart and Contact Us */
+.Navbar__S02 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .Navbar__S2 {
     display: flex;
-    gap: 8px;
+    align-items: center; /* Ensure items are vertically centered */
+    gap: 10px; /* Adjust gap as needed */
 }
+
 .Navbar__S2 p {
     margin: 0;
     font-size: 16px;
     color: white;
-    /* Ensures text is readable */
     cursor: pointer;
     display: flex;
     align-items: center;
     transition: color 0.3s ease;
-    /* Added transition for smooth color change */
+}
+
+.Navbar__S2 .cart i, 
+.Navbar__S2 .contact-us {
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Ensure same font size */
 }
 
 .Navbar__S2 p:hover {
     color: #f0f2f4;
-    /* Subtle hover effect */
 }
 
 .contact-us {
-    transition: transform 0.3s;
     display: none !important;
 }
-
-.contact-us:hover {
-    transform: scale(1.1)
-}
-
-/* Hover Effects for Cart Icon */
 .Navbar__S2 p i {
     margin-right: 5px;
-    /* Spacing between icon and text */
     transition: transform 0.3s ease, color 0.3s ease;
-    /* Smooth transition */
 }
 
 .Navbar__S2 p:hover i {
     transform: scale(1.2);
-    /* Slight scaling on icon hover */
     color: #f0f2f4;
-    /* Change icon color on hover */
 }
 
 /* Buttons */

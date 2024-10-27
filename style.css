@@ -185,13 +185,7 @@ html {
     /* Color change on hover for interactivity */
 }
 
-/* Section 2 of Navbar */
-.Navbar__S02 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
+/* Navbar Menu */
 .Navbar__Menu {
     display: flex;
     justify-content: space-evenly;
@@ -277,26 +271,38 @@ html {
         display: none;
     }
 }
-/* Navigation Links */
+/* Dark Mode, Cart and Contact Us */
+.Navbar__S02 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .Navbar__S2 {
     display: flex;
-    gap: 8px;
+    align-items: center; /* Ensure items are vertically centered */
+    gap: 10px; /* Adjust gap as needed */
 }
 
 .Navbar__S2 p {
     margin: 0;
     font-size: 16px;
     color: white;
-    /* Ensures text is readable */
     cursor: pointer;
     display: flex;
     align-items: center;
     transition: color 0.3s ease;
 }
 
+.Navbar__S2 .cart i, 
+.Navbar__S2 .contact-us {
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Ensure same font size */
+}
+
 .Navbar__S2 p:hover {
     color: #f0f2f4;
-    /* Subtle hover effect */
 }
 
 .contact-us {
@@ -304,24 +310,18 @@ html {
 }
 
 .contact-us:hover {
-    transform: scale(1.1)
+    transform: scale(1.1);
 }
 
-/* Hover Effects for Cart Icon */
 .Navbar__S2 p i {
     margin-right: 5px;
-    /* Spacing between icon and text */
     transition: transform 0.3s ease, color 0.3s ease;
-    /* Smooth transition */
 }
 
 .Navbar__S2 p:hover i {
     transform: scale(1.2);
-    /* Slight scaling on icon hover */
     color: #f0f2f4;
-    /* Change icon color on hover */
 }
-
 /* Buttons */
 .Navbar__S3 button {
     padding: 8px 15px;
@@ -1148,37 +1148,35 @@ body.dark-mode #footer {
 
     .Navbar__S3__button3 {
         display: inline-block;
-        /* Show Get App button on mobile and tablet */
         padding: 4px 8px;
-        /* Further reduced padding */
-        font-size: 8px;
-        /* Further reduced font size */
-        border-radius: 10px;
-        /* Slightly reduced border radius */
+        font-size: 10px;
+        border-radius: 8px;
+        /* Adjusted font size and padding */
     }
 
     .Navbar__S0 {
         display: block;
-        /* Show hamburger menu on mobile and tablet */
+        font-size: 20px; /* Adjusted for visibility */
+    }
+
+    .Navbar__S2 {
+        flex-direction: row;
+        gap: 15px;
+        align-items: center;
     }
 
     .Navbar__S2 p {
         font-size: 14px;
-        /* Slightly reduced font size */
     }
 
     .Navbar__S1 h1 {
         font-size: 18px;
-        /* Slightly reduced font size */
     }
 
     .Navbar__S3__button2 {
         padding: 4px 8px;
-        /* Further reduced padding */
-        font-size: 8px;
-        /* Further reduced font size */
-        border-radius: 10px;
-        /* Slightly reduced border radius */
+        font-size: 10px;
+        border-radius: 8px;
     }
 
     /* Mobile Menu Styles */
@@ -1187,29 +1185,22 @@ body.dark-mode #footer {
         flex-direction: column;
         position: absolute;
         top: 60px;
-        /* Adjust based on navbar height */
         right: 20px;
         background-color: #34495e;
-        /* Keeping original background color */
         padding: 10px;
         border-radius: 5px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
         z-index: 1000;
-        /* Ensure it appears above other elements */
     }
 
     #navbar-links.active {
         display: flex;
     }
 
-    .Navbar__S2 {
-        flex-direction: column;
-        gap: 10px;
-    }
-
+    .Navbar__S2,
     .Navbar__S3 {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 8px;
     }
 }
 
@@ -1220,26 +1211,42 @@ body.dark-mode #footer {
 
     .Navbar__S1 h1 {
         font-size: 16px;
-        /* Further reduced font size */
     }
 
     .Navbar__S2 p {
         font-size: 12px;
-        /* Further reduced font size */
     }
 
     .Navbar__S3__button3,
     .Navbar__S3__button2 {
         padding: 3px 6px;
-        /* Further reduced padding */
         font-size: 8px;
-        /* Further reduced font size */
         border-radius: 8px;
-        /* Further adjusted border radius */
     }
 
     .Navbar__S0 {
         font-size: 20px;
-        /* Adjusted icon size */
+    }
+
+    .Navbar__S2 {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .Navbar__S3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    #navbar-links {
+        position: fixed;
+        top: 50px;
+        right: 0;
+        width: 100%;
+        background-color: #34495e;
+        padding: 20px 10px;
+        text-align: center;
     }
 }
