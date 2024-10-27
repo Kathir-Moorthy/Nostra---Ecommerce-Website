@@ -1219,9 +1219,9 @@ body.dark-mode #footer {
 
     .Navbar__S3__button3,
     .Navbar__S3__button2 {
-        padding: 3px 6px;
-        font-size: 8px;
-        border-radius: 8px;
+        padding: 2px 5px;
+        font-size: 6px;
+        border-radius: 6px;
     }
 
     .Navbar__S0 {
