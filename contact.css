@@ -847,12 +847,10 @@ body.dark-mode #footer {
     }
 
     .Navbar__S2 {
-        flex-direction: column;
         gap: 10px;
     }
 
     .Navbar__S3 {
-        flex-direction: column;
         gap: 10px;
     }
 }
@@ -861,7 +859,13 @@ body.dark-mode #footer {
     .Navbar {
         padding: 8px 15px;
     }
+    .Navbar__S2 {
+        gap: 5px;
+    }
 
+    .Navbar__S3 {
+        gap: 5px;
+    }
     .Navbar__S1 h1 {
         font-size: 16px;
         /* Further reduced font size */

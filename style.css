@@ -1229,13 +1229,11 @@ body.dark-mode #footer {
     }
 
     .Navbar__S2 {
-        flex-direction: column;
         align-items: center;
         gap: 5px;
     }
 
     .Navbar__S3 {
-        flex-direction: column;
         align-items: center;
         gap: 5px;
     }
