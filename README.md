@@ -60,6 +60,8 @@ Sliders in Today’s Deals, New Arrivals, and Most Wanted sections enhance brows
 
 📂 Project Structure
 The project is organized for easy navigation and development:
+
+
 Nostra-E-Commerce/
 ├── index.html                   # Main home page
 ├── css/
