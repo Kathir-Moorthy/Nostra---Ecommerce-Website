@@ -105,83 +105,54 @@ document.getElementById("signin-form").addEventListener("submit", function (even
     alert(`Signed in successfully with email: ${emailInput}`);
 });
 
-const sliderContainer = document.getElementById('product-slider');
-const prevSlide = document.getElementById('prevSlide');
-const nextSlide = document.getElementById('nextSlide');
+// Function to handle slider scroll with looping for both 'next' and 'previous' buttons
+function setupSlider(sliderContainer, prevButton, nextButton) {
+    nextButton.addEventListener('click', () => {
+        const sliderWidth = sliderContainer.clientWidth;
+        const maxScrollLeft = sliderContainer.scrollWidth - sliderWidth;
 
-nextSlide.addEventListener('click', () => {
-    const sliderWidth = sliderContainer.clientWidth;
-
-    // Scroll to the next set of items based on the container width
-    sliderContainer.scrollBy({
-        top: 0,
-        left: sliderWidth, // Move by the width of the container
-        behavior: 'smooth'
+        if (Math.ceil(sliderContainer.scrollLeft) >= maxScrollLeft) {
+            // If at the last item, loop back to the start
+            sliderContainer.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            // Otherwise, scroll to the next set of items
+            sliderContainer.scrollBy({
+                top: 0,
+                left: sliderWidth,
+                behavior: 'smooth'
+            });
+        }
     });
-});
 
-prevSlide.addEventListener('click', () => {
-    const sliderWidth = sliderContainer.clientWidth;
+    prevButton.addEventListener('click', () => {
+        const sliderWidth = sliderContainer.clientWidth;
 
-    // Scroll to the previous set of items based on the container width
-    sliderContainer.scrollBy({
-        top: 0,
-        left: -sliderWidth, // Move backward by the width of the container
-        behavior: 'smooth'
+        if (sliderContainer.scrollLeft <= 0) {
+            // If at the first item, jump to the end
+            sliderContainer.scrollTo({
+                top: 0,
+                left: sliderContainer.scrollWidth,
+                behavior: 'smooth'
+            });
+        } else {
+            // Otherwise, scroll to the previous set of items
+            sliderContainer.scrollBy({
+                top: 0,
+                left: -sliderWidth,
+                behavior: 'smooth'
+            });
+        }
     });
-});
+}
 
-const sliderContainer1 = document.getElementById('product-slider1');
-const prevSlide1 = document.getElementById('prevSlide1');
-const nextSlide1 = document.getElementById('nextSlide1');
-
-nextSlide1.addEventListener('click', () => {
-    const sliderWidth1 = sliderContainer1.clientWidth;
-
-    // Scroll to the next set of items based on the container width
-    sliderContainer1.scrollBy({
-        top: 0,
-        left: sliderWidth1, // Move by the width of the container
-        behavior: 'smooth'
-    });
-});
-
-prevSlide1.addEventListener('click', () => {
-    const sliderWidth1 = sliderContainer1.clientWidth;
-
-    // Scroll to the previous set of items based on the container width
-    sliderContainer1.scrollBy({
-        top: 0,
-        left: -sliderWidth1, // Move backward by the width of the container
-        behavior: 'smooth'
-    });
-});
-
-const sliderContainer2 = document.getElementById('product-slider2');
-const prevSlide2 = document.getElementById('prevSlide2');
-const nextSlide2 = document.getElementById('nextSlide2');
-
-nextSlide2.addEventListener('click', () => {
-    const sliderWidth2 = sliderContainer2.clientWidth;
-
-    // Scroll to the next set of items based on the container width
-    sliderContainer2.scrollBy({
-        top: 0,
-        left: sliderWidth2, // Move by the width of the container
-        behavior: 'smooth'
-    });
-});
-
-prevSlide2.addEventListener('click', () => {
-    const sliderWidth2 = sliderContainer2.clientWidth;
-
-    // Scroll to the previous set of items based on the container width
-    sliderContainer2.scrollBy({
-        top: 0,
-        left: -sliderWidth2, // Move backward by the width of the container
-        behavior: 'smooth'
-    });
-});
+// Apply the function to each slider
+setupSlider(document.getElementById('product-slider'), document.getElementById('prevSlide'), document.getElementById('nextSlide'));
+setupSlider(document.getElementById('product-slider1'), document.getElementById('prevSlide1'), document.getElementById('nextSlide1'));
+setupSlider(document.getElementById('product-slider2'), document.getElementById('prevSlide2'), document.getElementById('nextSlide2'));
 
 // Select necessary elements
 const hamburgerMenu = document.getElementById('hamburger-menu');

@@ -229,9 +229,6 @@ html {
 .Navbar__Menu p:hover::after {
     background: white; /* Show underline on hover */
 }
-.cart{
-    display: none !important;
-}
 /* Side Menu Styling */
 .side-menu {
     height: 100%;

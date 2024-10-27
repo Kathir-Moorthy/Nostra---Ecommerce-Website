@@ -209,9 +209,6 @@ html {
     background-color: #c0392b;
     transform: scale(1.05);
 }
-.cart{
-    display: none !important;
-}
 /* Animation for the Navbar */
 .Navbar {
     animation: fadeInDown 1s ease-in-out;
@@ -580,7 +577,74 @@ body.popup-active::before {
     text-align: center; 
     margin-top: 20px;
 }
+.product-card{
+    position: relative;
+}
+/* Styles for Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #ff6347;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 5px;
+    display: inline-block;
+    margin-left: 20%;
+    margin-right: 20%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.add-to-cart-btn:hover {
+    background-color: #ff4500;
+}
 
+/* Styles for Cart Popup Message */
+.cart-popup {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: none;
+    z-index: 10;
+    max-width: 300px;
+}
+
+/* Media Query for Tablet (780px) */
+@media (max-width: 780px) {
+    .add-to-cart-btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+    .cart-popup {
+        top: 60px;
+        right: 10px;
+        padding: 10px 16px;
+        max-width: 260px;
+    }
+}
+
+/* Media Query for Mobile (600px and below) */
+@media (max-width: 600px) {
+    .add-to-cart-btn {
+        font-size: 12px;
+        padding: 5px 10px;
+        width: 100%;
+        text-align: center;
+    }
+    .cart-popup {
+        top: 60px;
+        right: 5px;
+        padding: 8px 12px;
+        width: 90%;
+        max-width: none;
+        text-align: center;
+    }
+}
 #faq{
     opacity: 0; /* Start invisible */
     animation: fadeIn 0.6s forwards; /* Fade in over 0.6 seconds */

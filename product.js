@@ -8,7 +8,7 @@ darkModeBtn.addEventListener('click', () => {
 
     if (body.classList.contains('dark-mode')) {
         darkModeIcon.classList.replace('fa-moon', 'fa-sun');
-        darkModeBtn.title = "Light Mode"; 
+        darkModeBtn.title = "Light Mode";
     } else {
         darkModeIcon.classList.replace('fa-sun', 'fa-moon');
         darkModeBtn.title = "Dark Mode";
@@ -32,16 +32,16 @@ closePopup.addEventListener('click', () => {
 });
 
 // Sign-in form submission and success message with email
-document.getElementById("signin-form").addEventListener("submit", function(event) {
+document.getElementById("signin-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
-    
+
     const emailInput = document.getElementById("signin-email").value;
-    
+
     // Successful login action: Hide sign-in popup, change the navbar button, and show success alert
     signinPopup.classList.add('hidden');
     body.classList.remove('popup-active');
     signInButton.style.display = 'none';  // Hide "Sign In" button in the navbar after login
-    
+
     // Show alert with the email entered
     alert(`Signed in successfully with email: ${emailInput}`);
 });
@@ -130,12 +130,12 @@ function searchProducts() {
         noResultsMessage.style.width = '100vw'; // Full width for centering
         noResultsMessage.style.height = '100vh'; // Optional: Full height centering
         productContainer.style.display = 'none'; // Hide product container if no results
-        filterContainer.style.display = 'none'; 
+        filterContainer.style.display = 'none';
     } else {
         noResultsMessage.style.display = 'none'; // Hide message if there are results
         productContainer.style.display = 'block'; // Show product container if there are results
-    
-        filterContainer.style.display = 'none'; 
+
+        filterContainer.style.display = 'none';
     }
 }
 
@@ -187,3 +187,27 @@ function searchProducts(input) {
 searchButtonDesktop.addEventListener('click', () => searchProducts(searchInputDesktop));
 searchButtonMobile.addEventListener('click', () => searchProducts(searchInputMobile));
 
+// Adjust popup display to ensure it appears and save product details to localStorage
+function addToCart(productName, productPrice, productImage) {
+    const popup = document.getElementById('cart-popup');
+    popup.textContent = `${productName} added to cart successfully`;
+    popup.style.display = 'block';
+
+    // Get existing cart items from localStorage or initialize an empty array if none exist
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Add the new product to the cart items array
+    cartItems.push({
+        name: productName,
+        price: productPrice,
+        image: productImage
+    });
+
+    // Save updated cart items back to localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    // Hide the popup after 3 seconds
+    setTimeout(() => {
+        popup.style.display = 'none';
+    }, 3000);
+}
