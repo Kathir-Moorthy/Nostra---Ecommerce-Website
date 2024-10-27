@@ -15,7 +15,6 @@ darkModeBtn.addEventListener('click', () => {
     }
 });
 
-//Extra Offer Popup
 window.onload = function() {
     var popup = document.getElementById("promoPopup");
     var closeBtn = document.getElementsByClassName("extraOfferPopup-close")[0];
@@ -30,7 +29,7 @@ window.onload = function() {
         document.body.classList.remove("blurred");
     }
 
-    // Close popup when clicking outside the content
+    // Close popup when clicking outside the popup content
     window.onclick = function(event) {
         if (event.target == popup) {
             popup.style.display = "none";
