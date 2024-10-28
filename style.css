@@ -1027,7 +1027,9 @@ body.dark-mode #footer {
     background: linear-gradient(to right, #2b2b2b, #4a4949,#2b2b2b) !important;
     color: white !important;
 }
-
+body.dark-mode .timer-clock {
+    color: white !important;
+}
 /* Media Queries */
 @media (max-width: 768px) {
 

@@ -167,3 +167,29 @@ hamburgerMenu.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
     sideMenu.classList.remove('show'); // Remove class to hide side menu
 });
+
+// Countdown timer script
+document.addEventListener("DOMContentLoaded", function() {
+    const timerDisplay = document.getElementById("deal-timer");
+    let timeRemaining = 24 * 60 * 60; // 24 hours in seconds
+
+    function startCountdown() {
+        const countdown = setInterval(() => {
+            let hours = Math.floor(timeRemaining / 3600);
+            let minutes = Math.floor((timeRemaining % 3600) / 60);
+            let seconds = timeRemaining % 60;
+
+            // Format as 00:00:00
+            timerDisplay.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+            timeRemaining--;
+
+            if (timeRemaining < 0) {
+                clearInterval(countdown);
+                timerDisplay.textContent = "Offer has ended!";
+            }
+        }, 1000);
+    }
+
+    startCountdown(); // Start the countdown on page load
+});
