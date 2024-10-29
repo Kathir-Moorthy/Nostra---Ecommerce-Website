@@ -62,25 +62,29 @@ Sliders in Today’s Deals, New Arrivals, and Most Wanted sections enhance brows
 The project is organized for easy navigation and development:
 
 
-Nostra-E-Commerce/
-├── index.html                   # Main home page
-├── css/
-│   ├── style.css                # Core CSS for main page
-│   ├── product.css              # CSS for product page
-│   ├── contact.css              # CSS for contact page
-│   └── cart.css                 # CSS for cart page
-├── js/
-│   ├── script.js                # JavaScript for main page (dark mode, pop-ups)
-│   ├── product.js               # JavaScript for product page (filter, search)
-│   ├── contact.js               # JavaScript for contact page functionality
-│   └── cart.js                  # JavaScript for cart page (add-to-cart)
-├── product.html                 # Product listing page
-├── contact.html                 # Contact page
-├── cart.html                    # Cart page
-├── images/                      # Folder for images, product pictures, and icons
-├── README.md                    # Project README file (you're here!)
-└── assets/
-    └── fonts/                   # Custom fonts used in the project
+# Nostra Ecommerce Structure
+
+| File/Directory               | Description                                          |
+|------------------------------|------------------------------------------------------|
+| `index.html`                 | Main home page                                       |
+| `css/`                       | Folder containing CSS files                          |
+| ├── `style.css`              | Core CSS for main page                               |
+| ├── `product.css`            | CSS for product page                                 |
+| ├── `contact.css`            | CSS for contact page                                 |
+| └── `cart.css`               | CSS for cart page                                    |
+| `js/`                        | Folder containing JavaScript files                   |
+| ├── `script.js`              | JavaScript for main page (dark mode, pop-ups)        |
+| ├── `product.js`             | JavaScript for product page (filter, search)         |
+| ├── `contact.js`             | JavaScript for contact page functionality            |
+| └── `cart.js`                | JavaScript for cart page (add-to-cart)               |
+| `product.html`               | Product listing page                                 |
+| `contact.html`               | Contact page                                         |
+| `cart.html`                  | Cart page                                            |
+| `images/`                    | Folder for images, product pictures, and icons       |
+| `README.md`                  | Project README file (you're here!)                   |
+| `assets/`                    | Folder for additional assets                         |
+| └── `fonts/`                 | Custom fonts used in the project                     |
+
 
 ⚙️ Installation and Setup
 Clone the Repository:
