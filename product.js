@@ -61,12 +61,15 @@ closeBtn.addEventListener('click', () => {
     sideMenu.classList.remove('show'); // Remove class to hide side menu
 });
 
-
 // Get all filter checkboxes
 const filters = document.querySelectorAll('.filter-group input[type="checkbox"]');
 
-// Get all product cards
+// Get the container holding all product cards
+const productsContainer = document.querySelector('.product-container'); // Assuming a container element for products
+
+// Get all product cards and category titles
 const productCards = document.querySelectorAll('.product-card');
+const categoryTitles = document.querySelectorAll('.category-title'); // Assuming each title has this class
 
 // Function to filter the products
 function filterProducts() {
@@ -75,17 +78,38 @@ function filterProducts() {
         .filter(filter => filter.checked)
         .map(filter => filter.getAttribute('data-category')); // Use data-category directly
 
-    // Show or hide products based on selected filters
+    // Show or hide products and titles based on selected filters
+    let isFilterActive = selectedFilters.length > 0;
+
     productCards.forEach(card => {
         const category = card.getAttribute('data-category');
 
-        // If no filters are selected, show all products
-        if (selectedFilters.length === 0 || selectedFilters.includes(category)) {
+        // If no filters are selected, show all products and all titles
+        if (!isFilterActive || selectedFilters.includes(category)) {
             card.style.display = 'block';
         } else {
             card.style.display = 'none';
         }
     });
+
+    // Update category titles visibility
+    categoryTitles.forEach(title => {
+        const titleCategory = title.getAttribute('data-category'); // Assuming title has data-category attribute
+        const isCategoryVisible = selectedFilters.includes(titleCategory) || !isFilterActive;
+
+        if (isCategoryVisible) {
+            title.style.display = 'block';
+        } else {
+            title.style.display = 'none';
+        }
+    });
+
+    // Toggle grid layout based on filter activity
+    if (isFilterActive) {
+        productsContainer.classList.add('filtered-grid');
+    } else {
+        productsContainer.classList.remove('filtered-grid');
+    }
 }
 
 // Attach event listeners to all filter checkboxes
@@ -93,8 +117,9 @@ filters.forEach(filter => {
     filter.addEventListener('change', filterProducts);
 });
 
-// Initial call to display all products
+// Initial call to display all products and titles
 filterProducts();
+
 
 // Get the search input, search button, product cards, and no results message
 const searchInput = document.querySelector('.Search__Input');
